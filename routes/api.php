@@ -37,7 +37,7 @@ Route::group(['middleware'=>['auth:sanctum']],function () {
         'product'=>\App\Http\Controllers\Api\Admin\ProductController::class,
         'category'=>\App\Http\Controllers\Api\Admin\CategoryController::class,
         'contact_us'=>\App\Http\Controllers\Api\Admin\ContactUsController::class,
-        'order'=>\App\Http\Controllers\Api\Admin\OrderController::class
+        'order'=> \App\Http\Controllers\Api\OrderController::class
     ]);
 
 
