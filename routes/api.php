@@ -31,7 +31,14 @@ Route::group(['middleware'=>['auth:sanctum']],function () {
     Route::get('/allWishList',[\App\Http\Controllers\Api\WishListController::class,'allWishList'])->name('allWishList');
     Route::delete('/deleteWishList/{id}',[\App\Http\Controllers\Api\WishListController::class,'deleteWishList'])->name('deleteWishList');
     Route::delete('/deleteAllWishList',[\App\Http\Controllers\Api\WishListController::class,'deleteAllWishList'])->name('deleteAllWishList');
-
+    Route::apiResources([
+        'dateSale'=>\App\Http\Controllers\Api\Admin\DateSaleController::class,
+        'homeSlider'=>\App\Http\Controllers\Api\Admin\HomeSliderController::class,
+        'product'=>\App\Http\Controllers\Api\Admin\ProductController::class,
+        'category'=>\App\Http\Controllers\Api\Admin\CategoryController::class,
+        'contact_us'=>\App\Http\Controllers\Api\Admin\ContactUsController::class,
+        'order'=>\App\Http\Controllers\Api\Admin\OrderController::class
+    ]);
 
 
 });
@@ -53,12 +60,6 @@ Route::get('/search',[\App\Http\Controllers\Api\HomeController::class,'search'])
 Route::get('/product/{id}',[\App\Http\Controllers\Api\HomeController::class,'showProduct'])->name('showProduct');
 Route::get('/homeSlider',[\App\Http\Controllers\Api\HomeController::class,'homeSlider'])->name('homeSlider');
 
-Route::apiResources([
-    'dateSale'=>\App\Http\Controllers\Api\Admin\DateSaleController::class,
-    'homeSlider'=>\App\Http\Controllers\Api\Admin\HomeSliderController::class,
-    'product'=>\App\Http\Controllers\Api\Admin\ProductController::class,
-    'category'=>\App\Http\Controllers\Api\Admin\CategoryController::class,
-    'contact_us'=>\App\Http\Controllers\Api\Admin\ContactUsController::class
-]);
+
 
 
